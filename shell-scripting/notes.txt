@@ -1,0 +1,42 @@
+Shell scripting is Linux based
+
+Linux architecture: ASK
+A - Applications
+    - Applications talk to shell
+S - Shell
+    - On top of kernel to access the kernel
+    - Shell talks to kernel
+K - Kernel
+    - Heart of the Linux OS
+    - Kernel has C programming files (Written by Linus Torvalds)
+    - Using these fies, we can create folders, do networking, manage hardware, install software
+    - Do all the things which can communicate with Hardware
+    - Kernel talks to hardware
+
+-----
+| A |
+-----
+| S |
+-----
+| K |
+-----
+
+We are learning shell so that we can handle kernel, using which we can automate tasks, write scripts, so on
+
+Shell Commands:
+echo - print
+mkdir - create folder
+ls - list directories
+
+Shell commands in a file - Shell script
+
+Steve Bourne: Created sh location: /bin/sh
+Improvements to Bourne's shell: Bourne Again Shell: Bash location: /bin/bash
+So many such shells came: csh, ksh, fish
+Currently mostly used shell is: bash
+
+Shell script running on which shell? -> Shabang
+
+Arguments: ./hello.sh _ _ _
+            arg0      1 2 3
+            separated by spaces
