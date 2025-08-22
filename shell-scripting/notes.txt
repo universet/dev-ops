@@ -40,3 +40,5 @@ Shell script running on which shell? -> Shabang
 Arguments: ./hello.sh _ _ _
             arg0      1 2 3
             separated by spaces
+
+Day3: Error Handling - If then
