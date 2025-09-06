@@ -69,17 +69,33 @@ create_ec2_instance() {
     wait_for_instance "$instance_id"
 }
 
+configure_aws() {
+  AWS_ACCESS_KEY=""
+  AWS_SECRET_KEY=""
+  AWS_REGION="ap-south-1"
+  AWS_OUTPUT="json"
+
+  aws configure set aws_access_key_id "$AWS_ACCESS_KEY"
+  aws configure set aws_secret_access_key "$AWS_SECRET_KEY"
+  aws configure set region "$AWS_REGION"
+  aws configure set output "$AWS_OUTPUT"
+
+  echo "AWS CLI configured successfully!"
+}
+
 main() {
 #    check_awscli || install_awscli
     if ! check_awscli ; then
       install_awscli
     fi
 
+    configure_aws
+
     echo "Creating EC2 instance..."
 
     # Specify the parameters for creating the EC2 instance
     AMI_ID="ami-0861f4e788f5069dd"
-    INSTANCE_TYPE="t2.micro"
+    INSTANCE_TYPE="t3.micro"
     KEY_NAME="devops-key"
     SUBNET_ID="subnet-041134b23f2ed4af4"
     SECURITY_GROUP_IDS="sg-0d53cc779d491e3cf"  # Add your security group IDs separated by space
